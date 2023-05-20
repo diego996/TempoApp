@@ -18,7 +18,7 @@ class OpenWeatherMapService
 
     public function getWeatherForecast($city)
     {
-        $endpoint = $this->apiUrl . '/weather';
+        $endpoint = 'https://api.openweathermap.org/data/2.5/weather';
         $response = Http::get($endpoint, [
             'lat' => "45.54",
             'long' => "9.48",
