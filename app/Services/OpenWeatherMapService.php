@@ -21,7 +21,9 @@ class OpenWeatherMapService
         $currentDate = Carbon::now()->toDateString();
         $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate]);
         $callStatistic->call_count += 1;
-        $callStatistic->save();
+        $callStatistic->type = "previsioni";
+
+
 
         $endpoint = $this->apiUrl . '/weather';
         $response = Http::get($endpoint, [
@@ -30,6 +32,8 @@ class OpenWeatherMapService
             'units' => 'metric',
         ]);
 
+        $callStatistic->response = $response->json();
+        $callStatistic->save();
         return $response->json();
     }
 
