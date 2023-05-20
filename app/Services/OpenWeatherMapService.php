@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Services;
-
+use App\Models\CallStatistic;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 
 class OpenWeatherMapService
