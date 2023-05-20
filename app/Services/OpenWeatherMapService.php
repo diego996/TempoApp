@@ -38,9 +38,9 @@ class OpenWeatherMapService
         $response = Http::get($endpoint, [
             'lat' => "45.54",
             'lon' => "9.48",
-            'appid' => $this->apiKey,
             'start' => $startDate,
             'end' => $endDate,
+            'appid' => $this->apiKey
         ]);
 
         $this->callStat("pioggie",$response);
