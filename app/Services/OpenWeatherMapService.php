@@ -32,7 +32,7 @@ class OpenWeatherMapService
 
     public function getRainHistory($city, $startDate, $endDate)
     {
-        $endpoint = 'http://history.openweathermap.org/data/2.5/history/accumulated_precipitation';
+        $endpoint = 'http://history.openweathermap.org/data/2.5/history/accumulated_precipitation?';
         $startDate = strtotime(date('Y-m-01 00:00:00'));
         $endDate = strtotime(date('Y-m-d 00:00:00'));
         $response = Http::get($endpoint, [
@@ -41,7 +41,6 @@ class OpenWeatherMapService
             'appid' => $this->apiKey,
             'start' => $startDate,
             'end' => $endDate,
-            'type' => 'hour',
         ]);
 
         $this->callStat("pioggie",$response);
