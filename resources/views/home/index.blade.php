@@ -37,6 +37,23 @@
                                 s.parentNode.insertBefore(script, s);
                             })();
                         </script>
+
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Amount</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach ($rainHistory['data'] as $rainData)
+                                <tr>
+                                    <td>{{ $rainData['date'] }}</td>
+                                    <td>{{ $rainData['amount'] }} mm</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
