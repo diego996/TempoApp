@@ -29,7 +29,7 @@ class OpenWeatherMapService
 
     public function getRainHistory($city, $startDate, $endDate)
     {
-        $endpoint = $this->apiUrl . '/history/city';
+        $endpoint = 'https://history.openweathermap.org/data/2.5/history/city';
         $response = Http::get($endpoint, [
             'q' => $city,
             'appid' => $this->apiKey,
