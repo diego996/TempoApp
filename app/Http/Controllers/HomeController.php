@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Services\OpenWeatherMapService;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,18 +11,27 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+
+    protected $openWeatherMapService;
+
+    public function __construct(OpenWeatherMapService $openWeatherMapService)
     {
-        $this->middleware('auth');
+        $this->openWeatherMapService = $openWeatherMapService;
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
+    public function index(Request $request, $city = 'inzago')
     {
-        return view('home');
+        $forecast = $this->openWeatherMapService->getWeatherForecast($city);
+        $rainHistory = $this->openWeatherMapService->getRainHistory($city, '2023-01-01', '2023-12-31');
+
+        // Puoi elaborare ulteriormente i dati se necessario
+
+        return view('home.index', [
+            'forecast' => $forecast,
+            'rainHistory' => $rainHistory,
+        ]);
     }
+
+
+
 }

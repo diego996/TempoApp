@@ -6,7 +6,9 @@ use App\Http\Controllers\LavorazioneController;
 use App\Http\Controllers\ProdottoController;
 use App\Http\Controllers\RaccoltaController;
 use App\Http\Controllers\IrrigazioniController;
+use App\Http\Controllers\HomeController;
 
+Route::get('/{city?}', [HomeController::class, 'index'])->name('home.index');
 
 Route::get('/', function () {
     return view('welcome');
