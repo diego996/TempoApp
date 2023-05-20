@@ -22,6 +22,7 @@ class OpenWeatherMapService
         $response = Http::get($endpoint, [
             'lat' => "45.54",
             'lon' => "9.48",
+            'units' => 'metric',
             'appid' => $this->apiKey,
         ]);
 
