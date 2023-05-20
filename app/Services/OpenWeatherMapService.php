@@ -19,7 +19,7 @@ class OpenWeatherMapService
     public function getWeatherForecast($city)
     {
         $currentDate = Carbon::now()->toDateString();
-        $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate]);
+        $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate])->where("type","previsioni");
         $callStatistic->call_count += 1;
         $callStatistic->type = "previsioni";
 
@@ -40,7 +40,7 @@ class OpenWeatherMapService
     public function getRainHistory($city, $startDate, $endDate)
     {
         $currentDate = Carbon::now()->toDateString();
-        $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate]);
+        $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate])->where("type","pioggia");
         $callStatistic->call_count += 1;
         $callStatistic->type = "pioggie";
 
