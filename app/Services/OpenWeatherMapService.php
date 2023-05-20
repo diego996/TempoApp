@@ -40,7 +40,7 @@ class OpenWeatherMapService
             'lon' => "9.48",
             'start' => $startDate,
             'end' => $endDate,
-            'appid' => $this->apiKey
+            'appid' => "f682a29f265e0996a4bf1c2ea5bf8bd6"
         ]);
 
         $this->callStat("pioggie",$response);
