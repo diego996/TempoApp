@@ -21,6 +21,7 @@ class WeatherController extends Controller
         $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate]);
         $callStatistic->call_count += 1;
         $callStatistic->save();
+        dd($currentDate, $callStatistic);
         $forecast = $this->openWeatherMapService->getWeatherForecast($city);
         // Elabora e restituisci i dati delle previsioni
     }
@@ -31,6 +32,7 @@ class WeatherController extends Controller
         $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate]);
         $callStatistic->call_count += 1;
         $callStatistic->save();
+        dd($currentDate, $callStatistic);
         $rainHistory = $this->openWeatherMapService->getRainHistory($city, $startDate, $endDate);
         // Elabora e restituisci i dati dello storico delle piogge
     }
