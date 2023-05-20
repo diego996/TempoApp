@@ -5,8 +5,8 @@
         <h1>Previsioni del Tempo</h1>
 
         <div class="row">
-            <div class="col-md-6">
-                <h2>Tempo attuale</h2>
+            <div class="col-md-6 text-center">
+                <h2 class="text-info ">Tempo attuale</h2>
                 <p>City: {{ $forecast['name'] }}</p>
                 <p>Temperatura : {{ $forecast['main']['temp'] }}°C</p>
                 <p>Umidità : {{ $forecast['main']['humidity'] }}%</p>
