@@ -3,8 +3,11 @@
 @section('content')
     <div class="container">
         <div class="card">
+            <div class="card-header text-center">
+             Previsioni del Tempo
+            </div>
             <div class="card-body">
-                <h1 class="text-center">Previsioni del Tempo</h1>
+
 
                 <div class="row">
                     <div class="col-md-6">
