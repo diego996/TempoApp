@@ -2,14 +2,14 @@
 
 @section('content')
     <div class="container">
-        <h1>Weather Forecast</h1>
+        <h1>Previsioni del Tempo</h1>
 
         <div class="row">
             <div class="col-md-6">
-                <h2>Current Weather</h2>
+                <h2>Tempo attuale</h2>
                 <p>City: {{ $forecast['name'] }}</p>
-                <p>Temperature: {{ $forecast['main']['temp'] }}°C</p>
-                <p>Humidity: {{ $forecast['main']['humidity'] }}%</p>
+                <p>Temperatura : {{ $forecast['main']['temp'] }}°C</p>
+                <p>Umidità : {{ $forecast['main']['humidity'] }}%</p>
                 <!-- Aggiungi altri dati delle previsioni che desideri visualizzare -->
             </div>
 
