@@ -7,7 +7,7 @@
                 <h1 class="text-center">Previsioni del Tempo</h1>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <h2 class="text-success">Tempo attuale</h2>
                         <p>City: {{ $forecast['name'] }}</p>
                         <p>Temperatura: {{ $forecast['main']['temp'] }}°C</p>
@@ -15,7 +15,7 @@
                         <!-- Aggiungi altri dati delle previsioni che desideri visualizzare -->
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-7">
                         <div id="openweathermap-widget-21"></div>
                         <script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script>
                         <script>
