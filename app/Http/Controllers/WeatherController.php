@@ -17,11 +17,7 @@ class WeatherController extends Controller
 
     public function getWeatherForecast($city)
     {
-        $currentDate = Carbon::now()->toDateString();
-        $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate]);
-        $callStatistic->call_count += 1;
-        $callStatistic->save();
-        dd($currentDate, $callStatistic);
+
         $forecast = $this->openWeatherMapService->getWeatherForecast($city);
         // Elabora e restituisci i dati delle previsioni
     }
