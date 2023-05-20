@@ -23,12 +23,17 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($rainHistory['data'] as $rainData)
-                        <tr>
-                            <td>{{ $rainData['date'] }}</td>
-                            <td>{{ $rainData['amount'] }} mm</td>
-                        </tr>
-                    @endforeach
+                    <?php
+
+                    dd($rainHistory);
+?>
+
+                    {{--@foreach ($rainHistory['data'] as $rainData)--}}
+                        {{--<tr>--}}
+                            {{--<td>{{ $rainData['date'] }}</td>--}}
+                            {{--<td>{{ $rainData['amount'] }} mm</td>--}}
+                        {{--</tr>--}}
+                    {{--@endforeach--}}
                     </tbody>
                 </table>
             </div>
