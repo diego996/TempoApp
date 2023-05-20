@@ -23,7 +23,6 @@ class OpenWeatherMapService
             'lat' => "45.54",
             'long' => "9.48",
             'appid' => $this->apiKey,
-            'units' => 'metric',
             'lang' => "it_it",
         ]);
 
