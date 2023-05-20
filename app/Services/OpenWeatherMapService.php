@@ -18,11 +18,6 @@ class OpenWeatherMapService
 
     public function getWeatherForecast($city)
     {
-        $currentDate = Carbon::now()->toDateString();
-        $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate, "type" => "previsioni"]);
-        $callStatistic->call_count += 1;
-        $callStatistic->type = "previsioni";
-
         $endpoint = $this->apiUrl . '/weather';
         $response = Http::get($endpoint, [
             'q' => $city,
@@ -30,19 +25,12 @@ class OpenWeatherMapService
             'units' => 'metric',
         ]);
 
-        $callStatistic->response = $response;
-        $callStatistic->save();
+        $this->callStat("previsioni",$response);
         return $response->json();
     }
 
     public function getRainHistory($city, $startDate, $endDate)
     {
-        $currentDate = Carbon::now()->toDateString();
-        $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate , "type" => "pioggie"]);
-        $callStatistic->call_count += 1;
-        $callStatistic->type = "pioggie";
-
-
         $endpoint = 'http://history.openweathermap.org/data/2.5/history/accumulated_precipitation';
         $startDate = strtotime(date('Y-m-01 00:00:00'));
         $endDate = strtotime(date('Y-m-d 00:00:00'));
@@ -54,8 +42,19 @@ class OpenWeatherMapService
             'end' => $endDate,
             'type' => 'hour',
         ]);
+
+        $this->callStat("pioggie",$response);
+
+        return $response->json();
+    }
+
+
+    public function callStat($type,$response){
+        $currentDate = Carbon::now()->toDateString();
+        $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate , "type" => $type]);
+        $callStatistic->call_count += 1;
+        $callStatistic->type = $type;
         $callStatistic->response = $response;
         $callStatistic->save();
-        return $response->json();
     }
 }
