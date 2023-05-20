@@ -36,6 +36,8 @@
                     {{--@endforeach--}}
                     </tbody>
                 </table>
+                <div id="openweathermap-widget-11"></div>
+                <script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script><script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 11,cityid: '3175491',appid: 'f0c0b0b56729998f56dcd0b9b2455cc1',units: 'metric',containerid: 'openweathermap-widget-11',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
             </div>
         </div>
     </div>
