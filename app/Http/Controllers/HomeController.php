@@ -33,7 +33,7 @@ class HomeController extends Controller
             // Aggiungi qui la logica di gestione dell'errore o delle azioni da intraprendere
         } else {
             $forecast = $this->openWeatherMapService->getWeatherForecast($city);
-            $rainHistory = $this->openWeatherMapService->getRainHistory($city, '2023-01-01', '2023-12-31');
+            $rainHistory = $this->openWeatherMapService->getRainHistory($city, '2023-05-01', '2023-05-15');
             return view('home.index', [
                 'forecast' => $forecast,
                 'rainHistory' => $rainHistory,
