@@ -20,7 +20,8 @@ class OpenWeatherMapService
     {
         $endpoint = $this->apiUrl . '/weather';
         $response = Http::get($endpoint, [
-            'q' => $city,
+            'lat' => "45.54",
+            'long' => "9.48",
             'appid' => $this->apiKey,
             'units' => 'metric',
             'lang' => "it_it",
