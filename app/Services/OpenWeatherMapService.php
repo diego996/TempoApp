@@ -11,8 +11,8 @@ class OpenWeatherMapService
 
     public function __construct()
     {
-        $this->apiKey = config('f0c0b0b56729998f56dcd0b9b2455cc1');
-        $this->apiUrl = config('https://api.openweathermap.org/data/2.5');
+        $this->apiKey = 'f0c0b0b56729998f56dcd0b9b2455cc1';
+        $this->apiUrl = 'https://api.openweathermap.org/data/2.5';
     }
 
     public function getWeatherForecast($city)
