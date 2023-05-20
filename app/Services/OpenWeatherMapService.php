@@ -21,7 +21,7 @@ class OpenWeatherMapService
         $endpoint = 'https://api.openweathermap.org/data/2.5/weather';
         $response = Http::get($endpoint, [
             'lat' => "45.54",
-            'long' => "9.48",
+            'lon' => "9.48",
             'appid' => $this->apiKey,
         ]);
 
@@ -36,7 +36,7 @@ class OpenWeatherMapService
         $endDate = strtotime(date('Y-m-d 00:00:00'));
         $response = Http::get($endpoint, [
             'lat' => "45.54",
-            'long' => "9.48",
+            'lon' => "9.48",
             'appid' => $this->apiKey,
             'start' => $startDate,
             'end' => $endDate,
