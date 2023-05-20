@@ -18,7 +18,7 @@ class OpenWeatherMapService
 
     public function getWeatherForecast($city)
     {
-        $currentDate = Carbon::now()->toDateTimeString();
+        $currentDate = Carbon::now()->toDateString();
         $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate]);
         $callStatistic->call_count += 1;
         $callStatistic->save();
@@ -35,7 +35,7 @@ class OpenWeatherMapService
 
     public function getRainHistory($city, $startDate, $endDate)
     {
-        $currentDate = Carbon::now()->toDateTimeString();
+        $currentDate = Carbon::now()->toDateString();
         $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate]);
         $callStatistic->call_count += 1;
         $callStatistic->save();
