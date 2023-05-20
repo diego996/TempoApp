@@ -15,8 +15,6 @@
             </div>
 
             <div class="col-md-6">
-                <h2>Previsioni del tempo</h2>
-
                     <?php
 
 
