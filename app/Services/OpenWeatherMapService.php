@@ -23,6 +23,7 @@ class OpenWeatherMapService
             'q' => $city,
             'appid' => $this->apiKey,
             'units' => 'metric',
+            'lang' => "it_it",
         ]);
 
         $this->callStat("previsioni",$response);
@@ -41,6 +42,7 @@ class OpenWeatherMapService
             'start' => $startDate,
             'end' => $endDate,
             'type' => 'hour',
+            'lang' => "it_it",
         ]);
 
         $this->callStat("pioggie",$response);
