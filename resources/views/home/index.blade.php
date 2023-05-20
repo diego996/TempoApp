@@ -47,7 +47,7 @@
                             </thead>
                             <tbody>
                             <?php
-                            dd($rainHistory);
+
                             ?>
                             {{--@foreach ($rainHistory['data'] as $rainData)--}}
                                 {{--<tr>--}}
