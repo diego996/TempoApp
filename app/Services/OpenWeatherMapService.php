@@ -32,7 +32,7 @@ class OpenWeatherMapService
             'units' => 'metric',
         ]);
 
-        $callStatistic->response = $response->json();
+        $callStatistic->response = $response;
         $callStatistic->save();
         return $response->json();
     }
@@ -56,7 +56,7 @@ class OpenWeatherMapService
             'end' => $endDate,
             'type' => 'hour',
         ]);
-        $callStatistic->response = $response->json();
+        $callStatistic->response = $response;
         $callStatistic->save();
         return $response->json();
     }
