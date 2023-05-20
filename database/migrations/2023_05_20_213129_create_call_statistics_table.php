@@ -12,6 +12,8 @@ class CreateCallStatisticsTable extends Migration
             $table->id();
             $table->date('date');
             $table->unsignedInteger('call_count')->default(0);
+            $table->string('type');
+            $table->text('response');
             $table->timestamps();
         });
     }

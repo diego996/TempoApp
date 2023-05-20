@@ -38,7 +38,8 @@ class OpenWeatherMapService
         $currentDate = Carbon::now()->toDateString();
         $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate]);
         $callStatistic->call_count += 1;
-        $callStatistic->save();
+        $callStatistic->type = "pioggie";
+
 
         $endpoint = 'http://history.openweathermap.org/data/2.5/history/accumulated_precipitation';
         $startDate = strtotime(date('Y-m-01 00:00:00'));
@@ -51,7 +52,8 @@ class OpenWeatherMapService
             'end' => $endDate,
             'type' => 'hour',
         ]);
-
+        $callStatistic->response = $response->json();
+        $callStatistic->save();
         return $response->json();
     }
 }
