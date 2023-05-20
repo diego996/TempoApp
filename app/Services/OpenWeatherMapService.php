@@ -22,7 +22,7 @@ class OpenWeatherMapService
         $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate]);
         $callStatistic->call_count += 1;
         $callStatistic->save();
-        dd($currentDate, $callStatistic);
+
         $endpoint = $this->apiUrl . '/weather';
         $response = Http::get($endpoint, [
             'q' => $city,
@@ -39,7 +39,7 @@ class OpenWeatherMapService
         $callStatistic = CallStatistic::firstOrNew(['date' => $currentDate]);
         $callStatistic->call_count += 1;
         $callStatistic->save();
-        dd($currentDate, $callStatistic);
+
         $endpoint = 'http://history.openweathermap.org/data/2.5/history/accumulated_precipitation';
         $startDate = strtotime(date('Y-m-01 00:00:00'));
         $endDate = strtotime(date('Y-m-d 00:00:00'));
