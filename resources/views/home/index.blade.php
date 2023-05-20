@@ -3,9 +3,10 @@
 @section('content')
     <div class="container">
         <div class="card">
-            <div class="card-body">
+            <div class="card-header">
                 <h1 class="text-center">Previsioni del Tempo</h1>
-
+            </div>
+            <div class="card-body">
                 <div class="row">
                     <div class="col-md-5">
                         <h2 class="text-success">Tempo attuale</h2>
